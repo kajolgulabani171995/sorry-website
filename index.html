@@ -53,11 +53,6 @@
             font-weight: bold;
             color: #ff4500;
         }
-        .gif-container img {
-            max-width: 100%;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
     </style>
 </head>
 <body>
@@ -77,14 +72,8 @@
         <button onclick="showGif('sorry')">Show How Sorry I Am</button>
         <button onclick="showGif('merk')">Merk Investments Fun Fact</button>
         <button onclick="showGif('peace')">Let's Make Up</button>
-        <button onclick="showGif('corgi')">Cute Corgi</button>
-        <button onclick="showGif('golden')">Adorable Golden</button>
-        <button onclick="showGif('samoyed')">Fluffy Samoyed</button>
-        <button onclick="showMessage('cute1')">Sweet Message 1</button>
-        <button onclick="showMessage('cute2')">Sweet Message 2</button>
         
-        <div id="gif-container" class="gif-container"></div>
-        <div id="message-container"></div>
+        <div id="gif-container"></div>
     </div>
 
     <script>
@@ -104,10 +93,7 @@
             const gifs = {
                 'sorry': 'https://media.giphy.com/media/eeUJaTwsHh3tswkaYm/giphy.gif',
                 'merk': 'https://media.giphy.com/media/67ThRZlYBvibtdF9JH/giphy.gif',
-                'peace': 'https://media.giphy.com/media/3o6Zt4HU9uwXmXSAuI/giphy.gif',
-                'corgi': 'https://media.giphy.com/media/1d5Zn8FqmJqApu4hNU/giphy.gif',
-                'golden': 'https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif',
-                'samoyed': 'https://media.giphy.com/media/fvNQjpUuXJe3C8Zt1s/giphy.gif'
+                'peace': 'https://media.giphy.com/media/3o6Zt4HU9uwXmXSAuI/giphy.gif'
             };
             const messages = {
                 'sorry': "I'm more sorry than a stock that just crashed! 📉😅",
@@ -115,18 +101,9 @@
                 'peace': "Truce? I promise to upgrade my memory RAM! 🤝🖥️"
             };
             gifContainer.innerHTML = `
-                <img src="${gifs[type]}" alt="${type} GIF">
-                ${messages[type] ? `<p style="color: #ff1493;">${messages[type]}</p>` : ''}
+                <img src="${gifs[type]}" alt="${type} GIF" style="max-width: 100%; border-radius: 10px;">
+                <p style="color: #ff1493;">${messages[type]}</p>
             `;
-        }
-
-        function showMessage(type) {
-            const messageContainer = document.getElementById('message-container');
-            const messages = {
-                'cute1': "You're my favorite notification 📱💖",
-                'cute2': "I smile every time I think of you 😊"
-            };
-            messageContainer.innerHTML = `<p style="color: #ff1493; font-weight: bold;">${messages[type]}</p>`;
         }
     </script>
 </body>
