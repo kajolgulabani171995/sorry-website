@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing You Every Second! 💘</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive;
+            text-align: center;
+            background: linear-gradient(45deg, #ffb3ba, #ffdfba);
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(255,105,180,0.5);
+            border: 3px solid #ff69b4;
+        }
+        h1 {
+            color: #ff1493;
+            text-shadow: 2px 2px 4px rgba(255,20,147,0.3);
+        }
+        button {
+            margin: 10px;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        button:hover {
+            background-color: #ff6347;
+            transform: scale(1.05);
+        }
+        #miss-you-counter {
+            font-weight: bold;
+            color: #ff1493;
+            font-size: 18px;
+            margin: 15px 0;
+            text-shadow: 1px 1px 2px rgba(255,20,147,0.3);
+        }
+        #gif-container {
+            margin-top: 20px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Oops, My Memory Crashed! 🧠💥</h1>
+        
+        <div id="miss-you-counter">
+            Seconds I've Missed You: <span id="seconds">0</span>
+        </div>
+
+        <p>I know I totally blanked on where you work, and I want to make it right. My brain must have been running on low RAM! 🤖</p>
+        
+        <p>I promise I'll never again forget that you work at <span class="highlight">Merk Investments</span>, where you crunch numbers and analyze markets like a financial ninja. 🥷📊</p>
+        
+        <p>Did you know that as of January 1, 2025, Merk Investments LLC had a portfolio value of $105,601,265? That's more zeros than my attention span can handle! 🤯</p>
+        
+        <button onclick="showGif('sorry')">Show How Sorry I Am</button>
+        <button onclick="showGif('merk')">Merk Investments Fun Fact</button>
+        <button onclick="showGif('peace')">Let's Make Up</button>
+        
+        <div id="gif-container"></div>
+    </div>
+
+    <script>
+        // Miss you counter
+        function updateMissYouCounter() {
+            const secondsSpan = document.getElementById('seconds');
+            let seconds = 0;
+            setInterval(() => {
+                seconds++;
+                secondsSpan.textContent = seconds;
+            }, 1000);
+        }
+        updateMissYouCounter();
+
+        function showGif(type) {
+            const gifContainer = document.getElementById('gif-container');
+            const gifs = {
+                'sorry': 'https://media.giphy.com/media/eeUJaTwsHh3tswkaYm/giphy.gif',
+                'merk': 'https://media.giphy.com/media/67ThRZlYBvibtdF9JH/giphy.gif',
+                'peace': 'https://media.giphy.com/media/3o6Zt4HU9uwXmXSAuI/giphy.gif'
+            };
+            const messages = {
+                'sorry': "I'm more sorry than a stock that just crashed! 📉😅",
+                'merk': "Merk Investments: Where financial dreams become spreadsheet realities! 💼🤓",
+                'peace': "Truce? I promise to upgrade my memory RAM! 🤝🖥️"
+            };
+            gifContainer.innerHTML = `
+                <img src="${gifs[type]}" alt="${type} GIF" style="max-width: 100%; border-radius: 10px;">
+                <p style="color: #ff1493;">${messages[type]}</p>
+            `;
+        }
+    </script>
+</body>
+</html>
